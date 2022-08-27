@@ -1,0 +1,133 @@
+html {
+    background-color: black;
+    color: beige;
+    font-family: 'Roboto Mono', monospace;
+    width: max-content;
+
+}
+
+#container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+header {
+    margin: 0 auto;
+    background: black;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+
+
+    h1 {
+        /* text-align: left; */
+        font-size: 32px;
+    }
+
+    img {
+        height: 65px;
+        margin: 10px;
+    }
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    a {
+        font-size: 1.1em;
+        text-decoration: none;
+        color: #d4ae32;
+        padding: 0 10px;
+        margin-right: 20px;
+    }
+
+    a:last-child {
+        margin-right: 0;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+main {
+
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .box {
+        background-color: darkslategrey;
+        padding: 5vh 0;
+        text-align: center;
+
+        img {
+            // height: 200px;
+            width: fit-content(80%);
+            margin: 10px;
+        }
+    }
+
+    div.box:hover {
+        // width: 500px;
+        background-color: darkslateblue;
+    }
+
+    button {
+        width: 120px;
+        background-color: darkorchid;
+        margin: 16px auto;
+        padding: 10px;
+        border-radius: 10px;
+
+    }
+
+    button:hover {
+        background-color: darkmagenta;
+    }
+
+    fieldset {
+
+
+        border: none;
+        text-align: center;
+    }
+
+    #add_to_basket input {
+        text-align: center;
+        margin: 0 auto;
+        width: 60px;
+        height: 20px;
+        border-radius: 10px;
+
+    }
+
+    #add_to_basket {
+        display: grid;
+        margin-bottom: 8px;
+        text-align: center;
+
+    }
+
+
+}
+
+footer {
+    text-align: left;
+    font-size: 16px;
+}
