@@ -7,18 +7,13 @@ html {
   width: max-content;
 }
 
-#container {
-  width: 95%;
-  margin: 0 auto;
-}
-
 header {
   margin: 0 auto;
   background: black;
   text-align: center;
   padding: 10px;
   color: white;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +21,7 @@ header {
 }
 header h1 {
   /* text-align: left; */
-  font-size: 32px;
+  font-size: 1.52em;
 }
 header img {
   height: 65px;
@@ -40,7 +35,7 @@ nav {
   padding: 0 10px;
 }
 nav a {
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-decoration: none;
   color: #d4ae32;
   padding: 0 10px;
@@ -55,17 +50,22 @@ nav a:hover {
 
 main .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat 2, 1fr;
   gap: 10px;
   padding: 10px;
 }
+main h2 {
+  padding-left: 30px;
+  padding-top: 10px;
+}
 main .box {
   background-color: darkslategrey;
-  padding: 5vh 0;
+  padding: 20px;
   text-align: center;
+  font-size: 1.5em;
 }
 main .box img {
-  width: fit-content(80%);
+  width: 250px;
   margin: 10px;
 }
 main div.box:hover {
@@ -84,6 +84,7 @@ main button:hover {
 main fieldset {
   border: none;
   text-align: center;
+  font-size: 1.2em;
 }
 main #add_to_basket input {
   text-align: center;
@@ -98,7 +99,97 @@ main #add_to_basket {
   text-align: center;
 }
 
-footer {
-  text-align: left;
-  font-size: 16px;
+@media screen and (min-width: 576px) {
+  header {
+    margin: 0 auto;
+    background: black;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  header h1 {
+    /* text-align: left; */
+    font-size: 2em;
+  }
+  header img {
+    height: 75px;
+    margin: 10px;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+  nav a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #d4ae32;
+    padding: 0 10px;
+    margin-right: 20px;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  main .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(47, 47, 47);
+  }
+  main h2 {
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+  main .box {
+    background-color: darkslategrey;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  main .box img {
+    width: 250px;
+    margin: 10px;
+  }
+  main div.box:hover {
+    background-color: darkslateblue;
+  }
+  main button {
+    width: 120px;
+    background-color: darkorchid;
+    margin: 16px auto;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  main button:hover {
+    background-color: darkmagenta;
+  }
+  main fieldset {
+    border: none;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  main #add_to_basket input {
+    text-align: center;
+    margin: 0 auto;
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+  }
+  main #add_to_basket {
+    display: grid;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  footer {
+    text-align: left;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */

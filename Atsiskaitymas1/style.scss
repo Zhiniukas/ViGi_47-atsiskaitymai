@@ -6,10 +6,8 @@ html {
 
 }
 
-#container {
-    width: 95%;
-    margin: 0 auto;
-}
+
+
 
 header {
     margin: 0 auto;
@@ -17,7 +15,8 @@ header {
     text-align: center;
     padding: 10px;
     color: white;
-    height: 100px;
+    height: 80px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +26,7 @@ header {
 
     h1 {
         /* text-align: left; */
-        font-size: 32px;
+        font-size: 1.52em;
     }
 
     img {
@@ -45,7 +44,7 @@ nav {
     padding: 0 10px;
 
     a {
-        font-size: 1.1em;
+        font-size: 1.2em;
         text-decoration: none;
         color: #d4ae32;
         padding: 0 10px;
@@ -66,19 +65,25 @@ main {
 
     .container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat (2, 1fr);
         gap: 10px;
         padding: 10px;
     }
 
+    h2 {
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+
     .box {
         background-color: darkslategrey;
-        padding: 5vh 0;
+        padding: 20px;
         text-align: center;
+        font-size: 1.5em;
 
         img {
             // height: 200px;
-            width: fit-content(80%);
+            width: 250px;
             margin: 10px;
         }
     }
@@ -99,6 +104,7 @@ main {
 
     button:hover {
         background-color: darkmagenta;
+
     }
 
     fieldset {
@@ -106,6 +112,7 @@ main {
 
         border: none;
         text-align: center;
+        font-size: 1.2em;
     }
 
     #add_to_basket input {
@@ -127,7 +134,136 @@ main {
 
 }
 
-footer {
-    text-align: left;
-    font-size: 16px;
+@media screen and (min-width: 576px) {
+
+    header {
+        margin: 0 auto;
+        background: black;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+
+
+
+        h1 {
+            /* text-align: left; */
+            font-size: 2em;
+        }
+
+        img {
+            height: 75px;
+            margin: 10px;
+        }
+    }
+
+
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        padding: 0 10px;
+
+        a {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #d4ae32;
+            padding: 0 10px;
+            margin-right: 20px;
+        }
+
+
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    main {
+
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 10px;
+            padding: 10px;
+            background-color: rgb(47, 47, 47);
+        }
+
+        h2 {
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+
+        .box {
+            background-color: darkslategrey;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+
+            img {
+                // height: 200px;
+                width: 250px;
+                margin: 10px;
+            }
+        }
+
+        div.box:hover {
+            // width: 500px;
+            background-color: darkslateblue;
+        }
+
+        button {
+            width: 120px;
+            background-color: darkorchid;
+            margin: 16px auto;
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+
+        button:hover {
+            background-color: darkmagenta;
+
+        }
+
+        fieldset {
+
+
+            border: none;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        #add_to_basket input {
+            text-align: center;
+            margin: 0 auto;
+            width: 60px;
+            height: 20px;
+            border-radius: 10px;
+
+        }
+
+        #add_to_basket {
+            display: grid;
+            margin-bottom: 8px;
+            text-align: center;
+
+        }
+
+
+    }
+
+
+    footer {
+        text-align: left;
+        font-size: 16px;
+    }
 }
