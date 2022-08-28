@@ -3,11 +3,12 @@ html {
     color: beige;
     font-family: 'Roboto Mono', monospace;
     width: max-content;
-
+    margin: auto;
 }
 
-
-
+.hides {
+    display: none;
+}
 
 header {
     margin: 0 auto;
@@ -42,22 +43,22 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+}
 
-    a {
-        font-size: 1.2em;
-        text-decoration: none;
-        color: #d4ae32;
-        padding: 0 10px;
-        margin-right: 20px;
-    }
+a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #d4ae32;
+    padding: 0 10px;
+    margin-right: 20px;
+}
 
-    a:last-child {
-        margin-right: 0;
-    }
+a:last-child {
+    margin-right: 0;
+}
 
-    a:hover {
-        text-decoration: underline;
-    }
+a:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -75,16 +76,34 @@ main {
         padding-top: 10px;
     }
 
+    @keyframes imagesize {
+        50% {
+            transform: scale(110%);
+        }
+
+        100% {
+            transform: scale(100%);
+        }
+    }
+
+
+
     .box {
         background-color: darkslategrey;
         padding: 20px;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1em;
 
         img {
             // height: 200px;
             width: 250px;
             margin: 10px;
+        }
+
+        img:hover {
+            animation-name: imagesize;
+            animation-duration: 1s;
+
         }
     }
 
@@ -93,18 +112,45 @@ main {
         background-color: darkslateblue;
     }
 
+    @keyframes buttoncolor {
+
+
+        0% {
+            background-color: darkorchid;
+            left: 0px;
+            top: 0px;
+        }
+
+        50% {
+            background-color: yellow;
+            left: 200px;
+            top: 200px;
+        }
+
+
+
+        100% {
+            background-color: darkmagenta;
+            left: 0px;
+            top: 0px;
+        }
+
+    }
+
+
+
     button {
         width: 120px;
         background-color: darkorchid;
         margin: 16px auto;
         padding: 10px;
         border-radius: 10px;
-
     }
 
     button:hover {
         background-color: darkmagenta;
-
+        animation-name: buttoncolor;
+        animation-duration: 1s;
     }
 
     fieldset {
@@ -112,7 +158,7 @@ main {
 
         border: none;
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     #add_to_basket input {
@@ -134,30 +180,18 @@ main {
 
 }
 
-@media screen and (min-width: 576px) {
+@media only screen and (min-width: 576px) {
 
     header {
-        margin: 0 auto;
-        background: black;
-        text-align: center;
-        padding: 10px;
-        color: white;
         height: 150px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 10px;
-
-
 
         h1 {
-            /* text-align: left; */
             font-size: 2em;
         }
 
         img {
             height: 75px;
-            margin: 10px;
+
         }
     }
 
@@ -168,26 +202,14 @@ main {
         flex-direction: column;
         justify-content: start;
         align-items: flex-start;
-        padding: 0 10px;
 
         a {
             font-size: 1.2em;
-            text-decoration: none;
-            color: #d4ae32;
-            padding: 0 10px;
-            margin-right: 20px;
         }
 
-
-
-        a:hover {
-            text-decoration: underline;
-        }
     }
 
     main {
-
-
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -197,16 +219,142 @@ main {
             background-color: rgb(47, 47, 47);
         }
 
-        h2 {
+        .box {
+
+            img {
+                width: 250px;
+                margin: 10px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+
+    .hides {
+        display: contents;
+    }
+
+
+
+    header {
+        height: 250px;
+
+        h1 {
+            font-size: 4em;
+        }
+
+        .img {
+            height: 175px;
+
+        }
+    }
+
+
+
+    nav {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding: 0 10px;
+
+
+        a {
+            font-size: 1.2em;
+        }
+
+    }
+
+    main {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+            padding: 10px;
+            background-color: rgb(47, 47, 47);
+        }
+
+        .box {
+
+            img {
+                width: 250px;
+                margin: 10px;
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+    .hides {
+        display: contents;
+        padding: 150px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        padding: 0 10px;
+        height: 350px;
+
+
+
+        h1 {
+            font-size: 5em;
+            text-align: center;
+        }
+
+        img {
+            height: 250px;
+
+        }
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding: 0 10px;
+        font-size: 2em;
+    }
+
+    main {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+            padding: 30px;
+            background-color: rgb(47, 47, 47);
+        }
+
+        a {
+            font-size: 2em;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
             padding-left: 30px;
-            padding-top: 10px;
+            padding-bottom: 20px;
+
+        }
+
+
+        h2 {
+            font-size: 3em;
         }
 
         .box {
             background-color: darkslategrey;
             padding: 20px;
             text-align: center;
-            font-size: 1.5em;
+            font-size: 3em;
 
             img {
                 // height: 200px;
@@ -221,7 +369,7 @@ main {
         }
 
         button {
-            width: 120px;
+            width: 300px;
             background-color: darkorchid;
             margin: 16px auto;
             padding: 10px;
@@ -239,15 +387,15 @@ main {
 
             border: none;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1em;
         }
 
         #add_to_basket input {
             text-align: center;
             margin: 0 auto;
-            width: 60px;
-            height: 20px;
-            border-radius: 10px;
+            width: 200px;
+            height: 90px;
+            border-radius: 25px;
 
         }
 
@@ -255,15 +403,23 @@ main {
             display: grid;
             margin-bottom: 8px;
             text-align: center;
+            font-size: 1em;
+
 
         }
 
+        .box {
+
+            img {
+                width: 350px;
+                margin: 10px;
+            }
+        }
 
     }
 
-
     footer {
         text-align: left;
-        font-size: 16px;
+        font-size: 20px;
     }
 }

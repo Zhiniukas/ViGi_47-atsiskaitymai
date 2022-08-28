@@ -5,6 +5,11 @@ html {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  margin: auto;
+}
+
+.hides {
+  display: none;
 }
 
 header {
@@ -34,17 +39,20 @@ nav {
   align-items: center;
   padding: 0 10px;
 }
-nav a {
+
+a {
   font-size: 1.2em;
   text-decoration: none;
   color: #d4ae32;
   padding: 0 10px;
   margin-right: 20px;
 }
-nav a:last-child {
+
+a:last-child {
   margin-right: 0;
 }
-nav a:hover {
+
+a:hover {
   text-decoration: underline;
 }
 
@@ -58,18 +66,74 @@ main h2 {
   padding-left: 30px;
   padding-top: 10px;
 }
+@-webkit-keyframes imagesize {
+  50% {
+    transform: scale(110%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+@keyframes imagesize {
+  50% {
+    transform: scale(110%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
 main .box {
   background-color: darkslategrey;
   padding: 20px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 main .box img {
   width: 250px;
   margin: 10px;
 }
+main .box img:hover {
+  -webkit-animation-name: imagesize;
+          animation-name: imagesize;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
 main div.box:hover {
   background-color: darkslateblue;
+}
+@-webkit-keyframes buttoncolor {
+  0% {
+    background-color: darkorchid;
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    background-color: yellow;
+    left: 200px;
+    top: 200px;
+  }
+  100% {
+    background-color: darkmagenta;
+    left: 0px;
+    top: 0px;
+  }
+}
+@keyframes buttoncolor {
+  0% {
+    background-color: darkorchid;
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    background-color: yellow;
+    left: 200px;
+    top: 200px;
+  }
+  100% {
+    background-color: darkmagenta;
+    left: 0px;
+    top: 0px;
+  }
 }
 main button {
   width: 120px;
@@ -80,11 +144,15 @@ main button {
 }
 main button:hover {
   background-color: darkmagenta;
+  -webkit-animation-name: buttoncolor;
+          animation-name: buttoncolor;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 main fieldset {
   border: none;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 main #add_to_basket input {
   text-align: center;
@@ -99,43 +167,24 @@ main #add_to_basket {
   text-align: center;
 }
 
-@media screen and (min-width: 576px) {
+@media only screen and (min-width: 576px) {
   header {
-    margin: 0 auto;
-    background: black;
-    text-align: center;
-    padding: 10px;
-    color: white;
     height: 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
   }
   header h1 {
-    /* text-align: left; */
     font-size: 2em;
   }
   header img {
     height: 75px;
-    margin: 10px;
   }
   nav {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
-    padding: 0 10px;
   }
   nav a {
     font-size: 1.2em;
-    text-decoration: none;
-    color: #d4ae32;
-    padding: 0 10px;
-    margin-right: 20px;
-  }
-  nav a:hover {
-    text-decoration: underline;
   }
   main .container {
     display: grid;
@@ -144,15 +193,94 @@ main #add_to_basket {
     padding: 10px;
     background-color: rgb(47, 47, 47);
   }
-  main h2 {
+  main .box img {
+    width: 250px;
+    margin: 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .hides {
+    display: contents;
+  }
+  header {
+    height: 250px;
+  }
+  header h1 {
+    font-size: 4em;
+  }
+  header .img {
+    height: 175px;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: 0 10px;
+  }
+  nav a {
+    font-size: 1.2em;
+  }
+  main .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(47, 47, 47);
+  }
+  main .box img {
+    width: 250px;
+    margin: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .hides {
+    display: contents;
+    padding: 150px;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding: 0 10px;
+    height: 350px;
+  }
+  header h1 {
+    font-size: 5em;
+    text-align: center;
+  }
+  header img {
+    height: 250px;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: 0 10px;
+    font-size: 2em;
+  }
+  main .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+    background-color: rgb(47, 47, 47);
+  }
+  main a {
+    font-size: 2em;
+  }
+  main .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
     padding-left: 30px;
-    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  main h2 {
+    font-size: 3em;
   }
   main .box {
     background-color: darkslategrey;
     padding: 20px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 3em;
   }
   main .box img {
     width: 250px;
@@ -162,7 +290,7 @@ main #add_to_basket {
     background-color: darkslateblue;
   }
   main button {
-    width: 120px;
+    width: 300px;
     background-color: darkorchid;
     margin: 16px auto;
     padding: 10px;
@@ -174,22 +302,27 @@ main #add_to_basket {
   main fieldset {
     border: none;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   main #add_to_basket input {
     text-align: center;
     margin: 0 auto;
-    width: 60px;
-    height: 20px;
-    border-radius: 10px;
+    width: 200px;
+    height: 90px;
+    border-radius: 25px;
   }
   main #add_to_basket {
     display: grid;
     margin-bottom: 8px;
     text-align: center;
+    font-size: 1em;
+  }
+  main .box img {
+    width: 350px;
+    margin: 10px;
   }
   footer {
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
